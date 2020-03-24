@@ -5,14 +5,7 @@ const App = () => {
   const [s, setS] = useState(Math.round(Math.random() * 100))
   const [l, setL] = useState(Math.round(Math.random() * 100))
   const [a, setA] = useState(Math.round(Math.random() * 100))
-  // randomColor = () => {
-  //   this.setState({
-  //     h: Math.round(Math.random() * 360),
-  //     s: Math.round(Math.random() * 360),
-  //     l: Math.round(Math.random() * 100),
-  //     a: Math.round(Math.random() * 100),
-  //   })
-  // }
+
   const randomColor = () => {
     const hue = Math.round(Math.random() * 360)
     const saturation = Math.round(Math.random() * 100)
@@ -40,7 +33,6 @@ const App = () => {
     setA(alpha)
   }
   useEffect(() => {
-    console.log('hsla updating')
     const hue = h
     const light = l
     const saturation = s
