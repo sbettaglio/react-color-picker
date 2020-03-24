@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
-
+import SliderInput from './SliderInput'
+import RandomButton from './RandomButton'
 const SliderBox = () => {
   const [h, setH] = useState(Math.round(Math.random() * 360))
   const [s, setS] = useState(Math.round(Math.random() * 100))
@@ -60,55 +61,43 @@ const SliderBox = () => {
         <form>
           <div>
             <p>Hue</p>
-            <input
-              type="range"
-              className={'hue'}
-              min="0"
-              max="360"
-              onChange={adjustHueSlider}
-              value={h}
-            ></input>
+            <SliderInput
+              val={h}
+              least="0"
+              most="360"
+              changeEvent={adjustHueSlider}
+            />
           </div>
           <div>
             <p>Saturation</p>
-            <input
-              type="range"
-              className={'saturation'}
-              min="0"
-              max="100"
-              onChange={adjustSaturationSlider}
-              value={s}
-            ></input>
+            <SliderInput
+              val={s}
+              least="0"
+              most="100"
+              changeEvent={adjustSaturationSlider}
+            />
           </div>
           <div>
             <p>Light</p>
-            <input
-              type="range"
-              className="light"
-              min="0"
-              max="100"
-              onChange={adjustLightSlider}
-              value={l}
-            ></input>
+            <SliderInput
+              val={l}
+              least="0"
+              most="100"
+              changeEvent={adjustLightSlider}
+            />
           </div>
           <div>
             <p>Alpha</p>
-            <input
-              type="range"
-              className="alpha"
-              min="0"
-              max="100"
-              onChange={adjustAlphaSlider}
-              value={a}
-            ></input>
+            <SliderInput
+              val={a}
+              least="0"
+              most="100"
+              changeEvent={adjustAlphaSlider}
+            />
           </div>
         </form>
       </section>
-      <section className="button-section">
-        <button className="random" onClick={randomColor}>
-          Random Color
-        </button>
-      </section>
+      <RandomButton changeEvent={randomColor} />
     </>
   )
 }
