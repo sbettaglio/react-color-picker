@@ -39,6 +39,17 @@ const App = () => {
     const alpha = e.target.value
     setA(alpha)
   }
+  useEffect(() => {
+    console.log('hsla updating')
+    const hue = h
+    const light = l
+    const saturation = s
+    const alpha = a
+    setH(hue)
+    setL(light)
+    setS(saturation)
+    setA(alpha)
+  }, [h, s, l, a])
 
   return (
     <>
@@ -49,7 +60,7 @@ const App = () => {
             <aside
               className="color-display"
               style={{
-                backgroundColor: `hsl(${h}, ${s}%, ${l}%, ${a}%)`,
+                backgroundColor: `hsla(${h}, ${s}%, ${l}%, ${a}%)`,
               }}
             ></aside>
           </div>
